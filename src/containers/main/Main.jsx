@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 
 import './Main.css';
 import DropdownList from '../../components/dropdownList/DropdownList.jsx';
@@ -85,11 +84,6 @@ class Main extends Component {
       </div>
   );
 }}
-
-Main.propTypes = {
-  currentCityWeather: PropTypes.array,
-  cityName: PropTypes.string
-};
 
 export default Main;
 
