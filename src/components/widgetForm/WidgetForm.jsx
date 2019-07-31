@@ -59,10 +59,10 @@ const WidgetForm= (props) => {
  
     const firstItem = props.currentCityWeather.splice(0,1).map((item, index) => 
         <React.Fragment key={index}>
-             <div className="currentday"><h3>{weekDayName(item.date, true)}{monthName(item.date)}{numberTh(item.date.slice(8,10))}</h3> <h5>{item.type}</h5></div>
+             <div className="currentDay"><h3>{weekDayName(item.date, true)}{monthName(item.date)}{numberTh(item.date.slice(8,10))}</h3> <h5>{item.type}</h5></div>
                 <ul>
-                <li className="weatherimage"><div>{choosePicture(item.type)} {item.temperature} <sup>&#176;C</sup></div></li>
-                  <li className="weatherinfo">
+                <li className="weatherImage"><div>{choosePicture(item.type)} {item.temperature} <sup>&#176;C</sup></div></li>
+                  <li className="weatherInfo">
                     <span>
                     <div>Precipitation: {item.precipitation}</div>
                     <div>Humidity: {item.humidity}</div>
@@ -78,11 +78,11 @@ const WidgetForm= (props) => {
       const content= props.currentCityWeather.map((item, index) => (
            <React.Fragment key={index}>
                 <tr>
-                    <td className="nextday"><div><strong>{weekDayName(item.date.slice(0,10))}</strong></div></td>
+                    <td><div><strong>{weekDayName(item.date.slice(0,10))}</strong></div></td>
                     <td><div>{choosePicture(item.type)}</div></td> 
-                    <td className="temperaturedivs">
-                        <div>{item.temperature}<sup>&#176;C</sup> </div> 
-                        <div>{Math.floor((item.temperature*1.8)+32)}<sup>&#176;F</sup></div>
+                    <td className="temperatureDivs">
+                        <div className="temperatureDivLeft">{item.temperature}<sup>&#176;C</sup> </div> 
+                        <div className="temperatureDivRight">{Math.floor((item.temperature*1.8)+32)}<sup>&#176;F</sup></div>
                     </td>
                     <td><div>Pollen {item.pollenCount}</div></td>
                 </tr>

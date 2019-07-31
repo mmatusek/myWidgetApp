@@ -3,7 +3,7 @@
   min-width: 300px;
 }
 
-div.currentday{
+div.currentDay{
   margin: 0.725em 0.9em;
   text-align: left;
 }
@@ -19,11 +19,11 @@ li{
   font-size: 30px;
 }
 
-li.weatherinfo{
+li.weatherInfo{
   font-size: 96%;
 }
 
-.weatherinfo div{
+.weatherInfo div{
   margin: 0 auto;
   text-align: left;
   width: 150px;
@@ -31,19 +31,18 @@ li.weatherinfo{
 }
 
 
-.weatherimage {
+.weatherImage {
   float: left;
   margin: 0.5em;
 }
 
-td.temperaturedivs{
+td.temperatureDivs{
   display: inline-flex;
 }
 
-.temperaturedivs div{
-  margin: 30% 12.5%;
+.temperatureDivs div{
+  margin: 30% 14.5%;
 }
-
 
 .rwd-table {
   border-collapse: collapse;
@@ -64,17 +63,17 @@ td.temperaturedivs{
 
 @media screen and (max-width: 450px) {
 
-  td.temperaturedivs{
+  td.temperatureDivs{
     display: flex;
     flex-direction: column;
   }
 
-  td.temperaturedivs div{
+  td.temperatureDivs div{
     margin: 5%;
   }
 
-  .weatherinfo div{
-    margin: 0 0 0 120px;
+  .weatherInfo div{
+    margin: 0 0 0 100px;
   }
 }
 
@@ -107,14 +106,18 @@ td.temperaturedivs{
 
   .rwd-table td div{
     text-align: center;
-    
   }
 
-
-  td.temperaturedivs{
+  td.temperatureDivs{
     display: flex;
     flex-direction: row;
     text-align: center;
-    margin: 0 12%;
+    padding: 0 25%;
   }
+
+  .temperatureDivs div{
+    width: 50px;
+    margin: 0;
+  }
+  
 }
