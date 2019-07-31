@@ -30,15 +30,15 @@ class Main extends Component {
 
     fetch(cityAPI, fetchOptions)
       .then(response => {
-        if(response.status === 200){
+        if (response.status === 200){
           return response;
         }
-        throw Error('No response from API')
+        throw Error('No response from API');
       })
       .then(response => response.json())
       .then(cityList => {
-        this.convertToSelectForm(cityList)
-      })
+        this.convertToSelectForm(cityList);
+      });
   }
 
   /**
@@ -47,30 +47,30 @@ class Main extends Component {
    */
   convertToSelectForm = ( cityList ) => {
     const currentCityList = [...cityList];
-    
+
     const selectFormCityList = currentCityList.map(city => {
         return {
           label: city.name,
           value: city.id
-        }
+        };
     });
 
-    this.setState({ cityList: selectFormCityList })
+    this.setState({ cityList: selectFormCityList });
   }
 
   /**
    *  Function for handle data received from child component - DropdownList
-   *  @param {array} currentCityWeather - weather forecasts of the city selected in the child component 
+   *  @param {array} currentCityWeather - weather forecasts of the city selected in the child component
    *                                      - i.e. [{cityId: '2', date:..},..]
    *  @param {string} cityName - name of the city selected in the child component - DropdownList - i.e. 'London'
    */
   weatherForecast = ( currentCityWeather, cityName ) => {
-    this.setState({ currentCityWeather, cityName })
+    this.setState({ currentCityWeather, cityName });
   }
 
   render(){
     const { cityList, cityName, currentCityWeather } = this.state;
-   
+
     return (
       <div className="App">
         <header>
@@ -83,7 +83,8 @@ class Main extends Component {
         </main>
       </div>
   );
-}}
+}
+}
 
 export default Main;
 

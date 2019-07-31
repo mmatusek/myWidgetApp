@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
 import PropTypes from 'prop-types';
- 
- 
+
 class DropdownList extends Component {
- 
+
     state = {
         cityAPI: 'http://dev-weather-api.azurewebsites.net/api/city/',
         currentCity: 'Select city...',
@@ -13,19 +12,19 @@ class DropdownList extends Component {
             headers: {'Content-Type': 'application/json'}
         }
     }
- 
+
     /**
      *  Function for handling onChange action and fetching weather forecasts data from API for current city
      *  @param {object} event - event object received from element after onChange action
      */
     handleInputChange = (event) => {
         const { fetchOptions, cityAPI } = this.state;
- 
+
         // get current date - i.e. 2019-07-15
         const whatDay = new Date().toJSON().slice(0,10);
         const forecastAPI = `${cityAPI}${event.value}/weather?date=${whatDay}`;
         const currentCity = event.label;
- 
+
         fetch(forecastAPI, fetchOptions)
           .then(response => {
             if (response.status === 200) {
@@ -39,11 +38,11 @@ class DropdownList extends Component {
             this.props.handleWeatherForecast(data, currentCity);
         });
     }
- 
+
     render() {
         const { currentCity } = this.state;
         const { options } = this.props;
- 
+
         return (
             <React.Fragment>
                 <div className="container">
@@ -64,10 +63,10 @@ class DropdownList extends Component {
         );
     }
 }
- 
+
 DropdownList.propTypes = {
     options: PropTypes.array.isRequired,
     handleWeatherForecast: PropTypes.func.isRequired
 };
- 
+
 export default DropdownList;
