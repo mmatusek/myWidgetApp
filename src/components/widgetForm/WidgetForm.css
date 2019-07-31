@@ -1,7 +1,6 @@
 .main{
   width: 100%;
   min-width: 300px;
-
 }
 
 div.currentday{
@@ -42,7 +41,7 @@ td.temperaturedivs{
 }
 
 .temperaturedivs div{
-  margin: 30% 10%;
+  margin: 30% 12.5%;
 }
 
 
@@ -76,10 +75,6 @@ td.temperaturedivs{
 
   .weatherinfo div{
     margin: 0 0 0 120px;
-  }
-  
-  .nexday{
-    margin: 10px;
   }
 }
 

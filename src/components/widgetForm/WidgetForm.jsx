@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './WidgetForm.css';
 
@@ -70,7 +71,7 @@ const WidgetForm= (props) => {
                     </span>
                     </li>
                 </ul>
-                
+              
         </React.Fragment>
     )
 
@@ -101,6 +102,8 @@ const WidgetForm= (props) => {
                 );
  }    
         
-    
+ WidgetForm.propTypes = {
+    currentCityWeather: PropTypes.array.isRequired,
+};
 
 export default WidgetForm;

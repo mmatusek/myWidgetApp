@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 import './Main.css';
 import DropdownList from '../../components/dropdownList/DropdownList.jsx';
@@ -10,7 +11,7 @@ class Main extends Component {
   state = {
     cityAPI: 'http://dev-weather-api.azurewebsites.net/api/city',
     cityList : [],
-    cityName: 'Katowice',
+    cityName: '',
     currentCityWeather: [],
     fetchOptions: {
       method: 'GET',
@@ -70,7 +71,7 @@ class Main extends Component {
 
   render(){
     const { cityList, cityName, currentCityWeather } = this.state;
-
+   
     return (
       <div className="App">
         <DropdownList options={cityList} handleWeatherForecast={this.weatherForecast}/>
@@ -78,6 +79,11 @@ class Main extends Component {
       </div>
   );
 }}
+
+Main.propTypes = {
+  currentCityWeather: PropTypes.array,
+  cityName: PropTypes.string
+};
 
 export default Main;
 
