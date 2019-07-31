@@ -74,8 +74,14 @@ class Main extends Component {
    
     return (
       <div className="App">
+        <header>
+          <div>Weather App</div>
+          <div>Martyna Matusek</div>
+          </header>
+        <main>
         <DropdownList options={cityList} handleWeatherForecast={this.weatherForecast}/>
         <WidgetForm currentCityWeather={currentCityWeather} cityName={cityName}/>
+        </main>
       </div>
   );
 }}

@@ -1,6 +1,7 @@
 .main{
   width: 100%;
   min-width: 300px;
+  background-color: #fff;
 }
 
 div.currentDay{
@@ -54,6 +55,7 @@ td.temperatureDivs{
 
 .rwd-table tr {
   padding: .35em;
+  border: 1px solid #ddd;
 }
 
 .rwd-table td {
@@ -84,7 +86,15 @@ td.temperatureDivs{
     border-collapse:collapse;
   }
 
+  header{
+    max-width: 1000px;
+  }
+
+  
   .main{
+  max-width: 1000px;
+  border-radius: 2px;
+  background-color: white;
   border: 1px solid #ddd;
   }
   
@@ -94,7 +104,8 @@ td.temperatureDivs{
     float:left;
     font-size: 20px;
     margin-bottom: .625em;
-    width: 20%;
+    width: 15%;
+   
   }
   
   .rwd-table td {
