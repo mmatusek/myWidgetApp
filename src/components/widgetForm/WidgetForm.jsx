@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Ordinal from 'ordinal';
 
 import './WidgetForm.css';
 
@@ -31,31 +32,6 @@ const WidgetForm= (props) => {
     };
 
     /**
-     *  Function to determine the correct ordinal indicators
-     *  @param {string} dayOfTheMonth -  the day of the month i.e.'29'
-     */
-    const numberTh = (dayOfTheMonth) => {
-        switch (dayOfTheMonth) {
-            case '1':
-                return `${dayOfTheMonth}st`;
-            case '2':
-                return `${dayOfTheMonth}nd`;
-            case '21':
-                return `${dayOfTheMonth}st`;
-            case '22':
-                return `${dayOfTheMonth}nd`;
-            case '23':
-                return `${dayOfTheMonth}rd`;
-            case '3':
-                return `${dayOfTheMonth}rd`;
-            case '31':
-                return `${dayOfTheMonth}st`;
-            default:
-                return `${dayOfTheMonth}th`;
-        }
-    };
-
-    /**
      *  Function for setting current weather icon
      *  @param {string} type - information from API about the type of weather i.e. Sunny
      */
@@ -76,6 +52,7 @@ const WidgetForm= (props) => {
     };
     /**
      *  Component that describes how a section of the UI should appear for the first item
+     *  Ordinal - Function to determine the correct ordinal indicators
      */
     const firstItem = props.currentCityWeather.splice(0,1).map((item, index) =>
         <React.Fragment key={index}>
@@ -83,7 +60,7 @@ const WidgetForm= (props) => {
                  <h3>
                     {weekDayName(item.date.slice(0,10),true)}
                     {monthName(item.date)}
-                    {numberTh(item.date.slice(8,10))}
+                    {Ordinal(parseInt(item.date.slice(8,10)))}
                 </h3>
                  <h5>{item.type}</h5>
             </div>
