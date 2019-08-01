@@ -65,8 +65,8 @@ class DropdownList extends Component {
 }
 
 DropdownList.propTypes = {
-    options: PropTypes.array.isRequired,
-    handleWeatherForecast: PropTypes.func.isRequired
+    options: PropTypes.array,
+    handleWeatherForecast: PropTypes.func
 };
 
 export default DropdownList;

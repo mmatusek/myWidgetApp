@@ -115,7 +115,7 @@ const WidgetForm= (props) => {
 };
 
  WidgetForm.propTypes = {
-    currentCityWeather: PropTypes.array.isRequired
+    currentCityWeather: PropTypes.array
 };
 
 export default WidgetForm;
