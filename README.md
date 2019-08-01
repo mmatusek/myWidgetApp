@@ -10,7 +10,7 @@ For development, you will only need Node.js installed on your environement.
     $ git clone https://github.com/mmatusek/myWidgetApp.git
     $ cd myWidgetApp
     $ npm install
-    npm install
+  
 
 #### Run
-    npm start
+    $ npm start
