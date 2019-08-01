@@ -8,5 +8,27 @@
 
 .main{
   max-width: 1000px; 
+  border-radius: 2px;
+  min-width: 300px;
+  max-height: 500px;
 }
 
+header{
+  max-width: 10000px;
+  height: 10em;
+  padding: 0;
+  background-image: url('/images/header.jpg');
+}
+
+header div{
+  font-size: 150%;
+  padding: 2%;
+  color: white;
+  letter-spacing: 20px;
+  margin: 0;
+}
+
+body{
+  min-height: 100%;
+  overflow-x: hidden;
+}

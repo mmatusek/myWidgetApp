@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
-
+import PropTypes from 'prop-types';
 
 class DropdownList extends Component {
 
     state = {
         cityAPI: 'http://dev-weather-api.azurewebsites.net/api/city/',
-        currentCity: '',
+        currentCity: 'Select city...',
         fetchOptions: {
             method: 'GET',
             headers: {'Content-Type': 'application/json'}
@@ -24,19 +24,19 @@ class DropdownList extends Component {
         const whatDay = new Date().toJSON().slice(0,10);
         const forecastAPI = `${cityAPI}${event.value}/weather?date=${whatDay}`;
         const currentCity = event.label;
-       
+
         fetch(forecastAPI, fetchOptions)
           .then(response => {
-            if(response.status === 200){
+            if (response.status === 200) {
               return response;
             }
-            throw Error('No response from API')
+            throw Error('No response from API');
           })
           .then(response => response.json())
           .then(data => {
-            this.setState({ currentCity })
+            this.setState({ currentCity });
             this.props.handleWeatherForecast(data, currentCity);
-        })
+        });
     }
 
     render() {
@@ -64,5 +64,9 @@ class DropdownList extends Component {
     }
 }
 
-export default DropdownList;
+DropdownList.propTypes = {
+    options: PropTypes.array,
+    handleWeatherForecast: PropTypes.func
+};
 
+export default DropdownList;
