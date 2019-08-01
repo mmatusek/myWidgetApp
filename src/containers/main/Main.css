@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  /* height: 500px; */
 }
 
 .container{
@@ -10,6 +9,7 @@
 .main{
   max-width: 1000px; 
   border-radius: 2px;
+  min-width: 300px;
   max-height: 500px;
 }
 
